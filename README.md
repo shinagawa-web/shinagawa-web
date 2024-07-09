@@ -7,11 +7,10 @@
 <!-- 2. プロフィールや連絡先を変更 -->
 ## <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28"> Hi there
 
-- 🧑‍💻 I'm a backend engineer.
-- 🌱 I’m currently learning go!
-- 📫 How to reach me: [Twitter - @username](https://twitter.com/username)
+- 🧑‍💻 I'm a frontend engineer.
+- 🌱 I’m currently learning css animation!
+- 📫 How to reach me: [Twitter - @shinagawaweb](https://x.com/shinagawaweb)
 <br>
-
 
 <!-- 3. 好きな技術スタックに変更 -->
 <!-- ライトモート：theme=light, ダークモート：theme=dark -->
