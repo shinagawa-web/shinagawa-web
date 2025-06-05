@@ -1,47 +1,40 @@
-<!-- 1. GitHub usernameを変更 -->
-<div align="dark">
-  <img src="https://komarev.com/ghpvc/?username=shinagawa-web" />
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=shinagawa-web&style=flat-square&color=blue" alt="Profile views" />
 </div>
 
+<h1 align="center">
+  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30"/> Hi there, I'm Kazutomo!
+</h1>
 
-<!-- 2. プロフィールや連絡先を変更 -->
-## <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28"> Hi there
+<p align="center">
+  🧑‍💻 Fullstack Engineer - Typescript & Go at the core <br>
+  🌱 Currently building robust web services, from frontend to backend <br>
+  🛠️ Actively contributing to OSS and growing the ecosystem <br>
+  📫 Connect with me on <a href="https://x.com/shinagawaweb">Twitter</a>!
+</p>
 
-- 🧑‍💻 I'm a frontend engineer.
-- 🌱 I’m currently learning css animation!
-- 📫 How to reach me: [Twitter - @shinagawaweb](https://x.com/shinagawaweb)
-<br>
+---
 
-<!-- 3. 好きな技術スタックに変更 -->
-<!-- ライトモート：theme=light, ダークモート：theme=dark -->
-<!-- アイコンの選択肢一覧：https://arc.net/l/quote/zizyykfh -->
-## 🌱 Skills
-<img alt="my skills" src="https://skillicons.dev/icons?theme=dark&perline=7&i=html,css,js,ts,react,next,figma,python,fastapi,go,docker,terraform,aws,gcp" />
-<br>
+## 🚀 Skills
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?theme=dark&perline=6&i=ts,react,next,go,fastapi,docker,terraform,aws,gcp,expressjs,nestjs,django,graphql,apollo,mongodb,mysql,postgresql,prisma" alt="My Skills" />
+</p>
 
 
-<!-- 4. GitHub usernameを変更, 2箇所 -->
-<!-- ライトモート：theme=light, ダークモート：theme=vue-dark  -->
 <!--
-## 🏃‍♀️ Activities
-<div align="left"> 
-  <img alt="Top Langs" height="170px" src="https://github-readme-stats.vercel.app/api?username=shinagawa-web&theme=vue-dark&layout=compact" />
-  <img alt="github stats" height="170px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=shinagawa-web&theme=vue-dark&layout=compact" />
+---
+## 🏃‍♂️ Activities
+
+<div align="center">
+  <img height="170px" src="https://github-readme-stats.vercel.app/api?username=shinagawa-web&theme=vue-dark&show_icons=true&count_private=true" alt="github stats" />
+  <img height="170px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=shinagawa-web&theme=vue-dark&layout=compact" alt="Top Langs" />
 </div>
 -->
 
-<!--
-This repository is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
-
+<p align="center">
+  ⚡ Fun fact: I thrive on learning and sharing — OSS contributions are my playground!  
+</p>
