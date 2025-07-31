@@ -7,7 +7,7 @@
 </h1>
 
 <p align="center">
-  🧑‍💻 Fullstack Engineer - Typescript & Go at the core <br>
+  🧑‍💻 Software Engineer - Typescript & Go at the core <br>
   🌱 Currently building robust web services, from frontend to backend <br>
   🛠️ Actively contributing to OSS and growing the ecosystem <br>
   📫 Connect with me on <a href="https://x.com/shinagawaweb">Twitter</a>!
