@@ -23,9 +23,9 @@
 <!-- ===== About ===== -->
 <p align="center">
   🔧 Engineer focused on the <b>reliability of long-running systems</b> <br/>
-  🚨 Incident response, SLOs, and safe change to systems that must keep running <br/>
-  🧰 I build small, focused tools that make real-world operations safer <br/>
-  📝 Writing about reliability, and reading OSS to understand how real systems behave
+  Incident response, SLOs, and safe change to systems that must keep running <br/>
+  I build small, focused tools that make real-world operations safer <br/>
+  Writing about reliability, and reading OSS to understand how real systems behave
 </p>
 
 ---
@@ -74,7 +74,7 @@
 
 `Systems & CLI` &nbsp;•&nbsp; `Web` &nbsp;•&nbsp; `Data` &nbsp;•&nbsp; `DevOps`
 
-  <img src="https://skillicons.dev/icons?theme=dark&perline=8&i=go,rust,c,ts,react,next,nodejs,graphql,postgresql,prisma,docker,githubactions,terraform,aws,gcp,bash" alt="My Skills" />
+  <img src="https://skillicons.dev/icons?theme=dark&perline=8&i=go,rust,c,ts,nodejs,postgresql,docker,githubactions,terraform,aws,gcp,bash" alt="My Skills" />
 </div>
 
 ---
