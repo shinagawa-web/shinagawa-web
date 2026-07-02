@@ -55,11 +55,15 @@
 
 <div align="center">
   <a href="https://zenn.dev/shinagawa_web">
-    <img src="https://img.shields.io/badge/Zenn-%E4%BF%A1%E9%A0%BC%E6%80%A7%E3%83%BB%E9%81%8B%E7%94%A8%20(%E6%97%A5%E6%9C%AC%E8%AA%9E)-3EA8FF?style=for-the-badge&logo=zenn&logoColor=white" alt="Zenn (日本語)" />
+    <img src="https://img.shields.io/badge/Zenn-3EA8FF?style=for-the-badge&logo=zenn&logoColor=white" alt="Zenn" />
   </a>
   <a href="https://dev.to/shinagawa-web">
-    <img src="https://img.shields.io/badge/DEV-OSS%20notes%20(English)-0A0A0A?style=for-the-badge&logo=devdotto&logoColor=white" alt="dev.to (English)" />
+    <img src="https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=devdotto&logoColor=white" alt="dev.to" />
   </a>
+</div>
+
+<div align="center">
+  <sub>Zenn in Japanese · dev.to in English</sub>
 </div>
 
 ---
