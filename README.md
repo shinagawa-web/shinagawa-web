@@ -44,7 +44,7 @@
 ## 📊 GitHub Analytics
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=shinagawa-web&hide_border=true&background=0d1117&stroke=6E48F5&ring=B14FF5&fire=B14FF5&currStreakLabel=6E48F5" alt="GitHub Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=shinagawa-web&hide_border=true&background=0d1117&stroke=6E48F5&ring=B14FF5&fire=B14FF5&currStreakNum=ffffff&currStreakLabel=6E48F5&sideNums=c9d1d9&sideLabels=c9d1d9&dates=8b949e" alt="GitHub Streak" />
 </div>
 
 <!-- Snake contribution animation — generated daily by .github/workflows/snake.yml -->
