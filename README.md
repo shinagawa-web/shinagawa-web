@@ -57,7 +57,7 @@
 </div>
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=shinagawa-web&bg_color=0d1117&color=c9d1d9&line=6E48F5&point=B14FF5&hide_border=true&area=true" alt="Activity Graph" width="98%" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=shinagawa-web&bg_color=0d1117&color=c9d1d9&line=6E48F5&point=B14FF5&hide_border=true&area=true&days=120" alt="Activity Graph" width="98%" />
 </div>
 
 ---
