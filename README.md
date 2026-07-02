@@ -1,12 +1,12 @@
 <!-- ===== Header banner ===== -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2E67F8,50:6E48F5,100:B14FF5&height=200&section=header&text=Hi%2C%20I%27m%20Kazutomo&fontSize=42&fontColor=ffffff&fontAlignY=38&desc=Go%20%C2%B7%20Rust%20%C2%B7%20TypeScript%20%7C%20CLI%20%C2%B7%20OSS&descSize=18&descAlignY=60&animation=fadeIn" alt="header banner" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2E67F8,50:6E48F5,100:B14FF5&height=200&section=header&text=Hi%2C%20I%27m%20Kazutomo&fontSize=42&fontColor=ffffff&fontAlignY=38&desc=Reliability%20of%20long-running%20systems&descSize=18&descAlignY=60&animation=fadeIn" alt="header banner" />
 </div>
 
 <!-- ===== Typing animation ===== -->
 <div align="center">
   <a href="https://x.com/shinagawaweb">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=6E48F5&center=true&vCenter=true&width=520&lines=Building+CLI+tools+in+Go+%26+Rust;Shipping+small%2C+sharp%2C+open-source+tools;PostgreSQL+internals+%26+developer+DX;Always+learning%2C+always+shipping+%E2%9A%A1" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=6E48F5&center=true&vCenter=true&width=600&lines=Keeping+long-running+systems+reliable;Incident+response%2C+SLOs%2C+safe+change;Small+tools+that+make+operations+safer;Reading+OSS+to+understand+real+systems" alt="Typing SVG" />
   </a>
 </div>
 
@@ -22,11 +22,26 @@
 
 <!-- ===== About ===== -->
 <p align="center">
-  🧑‍💻 Software Engineer — <b>Go</b>, <b>Rust</b> &amp; <b>TypeScript</b> at the core <br/>
-  🛠️ Building small, sharp <b>CLI &amp; developer tools</b> (and shipping them as OSS) <br/>
-  🐘 Into <b>PostgreSQL</b> internals, DX and reliability tooling <br/>
-  ⚡ Fun fact: I thrive on learning and sharing — OSS is my playground!
+  🔧 Engineer focused on the <b>reliability of long-running systems</b> <br/>
+  🚨 Incident response, SLOs, and safe change to systems that must keep running <br/>
+  🧰 I build small, focused tools that make real-world operations safer <br/>
+  📝 Writing about reliability, and reading OSS to understand how real systems behave
 </p>
+
+---
+
+## 🧰 Reliability Tooling
+
+<div align="center">
+  <i>Small, focused tools for teams running systems that have to keep working.</i>
+</div>
+
+<br/>
+
+- [**pgincident**](https://github.com/shinagawa-web/pgincident) — a live terminal dashboard for the first 30 seconds of a PostgreSQL incident: connections, locks, long queries, idle transactions
+- [**colref**](https://github.com/shinagawa-web/colref) — find every live reference to a database column before a risky schema change (Rails / Django)
+- [**gomarklint**](https://github.com/shinagawa-web/gomarklint) — catch broken docs and links before your readers do
+- [**tinytap**](https://github.com/shinagawa-web/tinytap) — eBPF-based traffic capture, making server-side request flows visible <sub>(work in progress · learning project)</sub>
 
 ---
 
