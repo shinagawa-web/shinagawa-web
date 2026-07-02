@@ -94,9 +94,3 @@
   </picture>
 </div>
 
----
-
-<!-- ===== Footer banner ===== -->
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:B14FF5,50:6E48F5,100:2E67F8&height=120&section=footer" alt="footer" />
-</div>
