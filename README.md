@@ -82,11 +82,6 @@
 ## 📊 GitHub Analytics
 
 <div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=shinagawa-web&show_icons=true&hide_border=true&bg_color=0d1117&title_color=6E48F5&icon_color=B14FF5&text_color=c9d1d9" alt="GitHub Stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=shinagawa-web&layout=compact&hide_border=true&bg_color=0d1117&title_color=6E48F5&text_color=c9d1d9" alt="Top Languages" />
-</div>
-
-<div align="center">
   <img src="https://streak-stats.demolab.com/?user=shinagawa-web&hide_border=true&background=0d1117&stroke=6E48F5&ring=B14FF5&fire=B14FF5&currStreakNum=ffffff&currStreakLabel=6E48F5&sideNums=c9d1d9&sideLabels=c9d1d9&dates=8b949e" alt="GitHub Streak" />
 </div>
 
