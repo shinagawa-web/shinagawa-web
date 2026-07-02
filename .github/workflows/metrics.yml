@@ -26,3 +26,12 @@ jobs:
           committer_message: "chore: update metrics"
           base: header, activity, repositories, metadata
           config_timezone: Asia/Tokyo
+          # Dark theme to match the profile (bg #0d1117, purple accents),
+          # otherwise the card is transparent/dark-text = unreadable on
+          # GitHub's dark mode.
+          extras_css: |
+            body { background: #0d1117; color: #c9d1d9; }
+            h2, h3 { color: #6E48F5 !important; }
+            a, h2 a, h3 a { color: #b392f0 !important; }
+            .field svg { fill: #8b949e !important; }
+            .day[fill="#ebedf0"] { fill: #161b22 !important; }
