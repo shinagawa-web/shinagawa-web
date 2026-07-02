@@ -44,20 +44,16 @@
 ## 📊 GitHub Analytics
 
 <div align="center">
-  <img height="165px" src="https://github-readme-stats.vercel.app/api?username=shinagawa-web&show_icons=true&count_private=true&hide_border=true&title_color=6E48F5&icon_color=B14FF5&text_color=c9d1d9&bg_color=0d1117" alt="GitHub stats" />
-  <img height="165px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=shinagawa-web&layout=compact&hide_border=true&title_color=6E48F5&text_color=c9d1d9&bg_color=0d1117" alt="Top Langs" />
-</div>
-
-<div align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=shinagawa-web&hide_border=true&background=0d1117&stroke=6E48F5&ring=B14FF5&fire=B14FF5&currStreakLabel=6E48F5" alt="GitHub Streak" />
 </div>
 
+<!-- Snake contribution animation — generated daily by .github/workflows/snake.yml -->
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=shinagawa-web&theme=onedark&no-frame=true&column=7&margin-w=8&margin-h=8" alt="Trophies" />
-</div>
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=shinagawa-web&bg_color=0d1117&color=c9d1d9&line=6E48F5&point=B14FF5&hide_border=true&area=true&days=120" alt="Activity Graph" width="98%" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shinagawa-web/shinagawa-web/output/github-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/shinagawa-web/shinagawa-web/output/github-snake.svg" />
+    <img alt="snake eating my contribution graph" src="https://raw.githubusercontent.com/shinagawa-web/shinagawa-web/output/github-snake.svg" width="98%" />
+  </picture>
 </div>
 
 ---
