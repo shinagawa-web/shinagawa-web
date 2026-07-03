@@ -24,7 +24,8 @@ jobs:
       # metrics sanitizes `body`/root styles out of extras_css, so we let it
       # only render the file and apply the dark theme ourselves afterwards.
       - name: Generate metrics (no commit)
-        uses: lowlighter/metrics@latest
+        # Pinned to a commit SHA (v3.34) for reproducible, supply-chain-safe runs.
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # v3.34
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           user: shinagawa-web
