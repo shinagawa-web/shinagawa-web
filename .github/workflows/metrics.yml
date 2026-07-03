@@ -33,15 +33,20 @@ jobs:
           config_timezone: Asia/Tokyo
 
       - name: Dark theme + publish to metrics branch
+        env:
+          # With `output_action: none`, metrics writes the fresh render here
+          # (NOT the workspace root) — confirmed via the run logs.
+          SRC: /metrics_renders/metrics.svg
         run: |
           set -euo pipefail
-          test -f metrics.svg || { echo "fresh metrics.svg not found in workspace"; find / -name metrics.svg 2>/dev/null | head; exit 1; }
+          test -f "$SRC" || { echo "fresh render not found at $SRC"; find / -name metrics.svg 2>/dev/null | head; exit 1; }
 
           # Deterministic dark theme (bg #0d1117, purple accents, light text) —
           # not subject to metrics' CSS sanitizer. The assert guards against
           # ever patching an already-themed (stale) file.
           python3 - <<'PY'
-          f = "metrics.svg"
+          import os
+          f = os.environ["SRC"]
           s = open(f, encoding="utf-8").read()
           assert 'fill="#0d1117"' not in s, "metrics.svg is already themed — not a fresh render"
           i = s.index(">") + 1
@@ -59,8 +64,7 @@ jobs:
 
           # Publish the themed SVG to the dedicated `metrics` branch (kept off
           # main so it never pollutes history or the contribution graph).
-          cp metrics.svg /tmp/metrics.svg
-          rm -f metrics.svg
+          cp "$SRC" /tmp/metrics.svg
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin metrics
