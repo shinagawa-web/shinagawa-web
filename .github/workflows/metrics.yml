@@ -37,18 +37,22 @@ jobs:
           # With `output_action: none`, metrics writes the fresh render here
           # (NOT the workspace root, and read-only for us) — confirmed via logs.
           SRC: /metrics_renders/metrics.svg
+          RAW: /tmp/raw.svg
           DEST: /tmp/metrics.svg
         run: |
           set -euo pipefail
           test -f "$SRC" || { echo "fresh render not found at $SRC"; find / -name metrics.svg 2>/dev/null | head; exit 1; }
 
+          # The fresh render is created root-owned by the metrics container, so
+          # read it as root into a runner-owned copy before touching it.
+          sudo cat "$SRC" > "$RAW"
+
           # Deterministic dark theme (bg #0d1117, purple accents, light text) —
-          # not subject to metrics' CSS sanitizer. Read the (read-only) fresh
-          # render and write the themed copy to DEST. The assert guards against
+          # not subject to metrics' CSS sanitizer. The assert guards against
           # ever patching an already-themed (stale) file.
           python3 - <<'PY'
           import os
-          s = open(os.environ["SRC"], encoding="utf-8").read()
+          s = open(os.environ["RAW"], encoding="utf-8").read()
           assert 'fill="#0d1117"' not in s, "metrics.svg is already themed — not a fresh render"
           i = s.index(">") + 1
           s = s[:i] + '<rect x="0" y="0" width="100%" height="100%" fill="#0d1117"/>' + s[i:]
