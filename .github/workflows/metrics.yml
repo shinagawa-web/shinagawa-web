@@ -31,7 +31,7 @@ jobs:
           user: shinagawa-web
           filename: metrics.svg
           output_action: none
-          base: header, activity, repositories, metadata
+          base: header, activity, metadata
           config_timezone: Asia/Tokyo
 
       # Deterministic dark theme to match the profile (bg #0d1117, purple
