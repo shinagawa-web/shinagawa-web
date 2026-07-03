@@ -41,7 +41,7 @@ jobs:
           DEST: /tmp/metrics.svg
         run: |
           set -euo pipefail
-          test -f "$SRC" || { echo "fresh render not found at $SRC"; find / -name metrics.svg 2>/dev/null | head; exit 1; }
+          test -f "$SRC" || { echo "fresh render not found at $SRC"; find /metrics_renders "$GITHUB_WORKSPACE" -name metrics.svg 2>/dev/null; exit 1; }
 
           # The fresh render is created root-owned by the metrics container, so
           # read it as root into a runner-owned copy before touching it.
@@ -73,7 +73,13 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin metrics
           git checkout metrics
-          cp /tmp/metrics.svg metrics.svg
+          cp "$DEST" metrics.svg
           git add metrics.svg
-          git commit -m "chore: update metrics" || { echo "no changes"; exit 0; }
+          # Skip cleanly only when nothing actually changed; let a real commit
+          # failure surface instead of being masked as "no changes".
+          if git diff --cached --quiet; then
+            echo "no changes to publish"
+            exit 0
+          fi
+          git commit -m "chore: update metrics"
           git push origin metrics
