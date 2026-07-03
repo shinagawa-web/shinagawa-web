@@ -13,17 +13,15 @@ jobs:
   github-metrics:
     runs-on: ubuntu-latest
     steps:
-      # Work directly on the dedicated `metrics` branch so the rendered SVG
-      # never pollutes main's history or the contribution graph — same
-      # self-hosting pattern as the snake animation.
-      - name: Checkout metrics branch
+      # Check out main (clean) — NOT the metrics branch. Checking out metrics
+      # brought its already-rendered metrics.svg into the workspace, which
+      # shadowed the fresh render and caused the patch to stack on stale output.
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: metrics
 
       # metrics sanitizes `body`/root styles out of extras_css, so we let it
       # only render the file and apply the dark theme ourselves afterwards.
-      - name: Generate metrics (no commit)
+      - name: Render metrics (no commit)
         # Pinned to a commit SHA (v3.34) for reproducible, supply-chain-safe runs.
         uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # v3.34
         with:
@@ -31,20 +29,33 @@ jobs:
           user: shinagawa-web
           filename: metrics.svg
           output_action: none
-          base: header, activity, repositories, metadata
+          base: header, activity, metadata
           config_timezone: Asia/Tokyo
 
-      # Deterministic dark theme to match the profile (bg #0d1117, purple
-      # accents, light text) — not subject to metrics' CSS sanitizer.
-      - name: Apply dark theme
+      - name: Dark theme + publish to metrics branch
+        env:
+          # With `output_action: none`, metrics writes the fresh render here
+          # (NOT the workspace root, and read-only for us) — confirmed via logs.
+          SRC: /metrics_renders/metrics.svg
+          RAW: /tmp/raw.svg
+          DEST: /tmp/metrics.svg
         run: |
+          set -euo pipefail
+          test -f "$SRC" || { echo "fresh render not found at $SRC"; find /metrics_renders "$GITHUB_WORKSPACE" -name metrics.svg 2>/dev/null; exit 1; }
+
+          # The fresh render is created root-owned by the metrics container, so
+          # read it as root into a runner-owned copy before touching it.
+          sudo cat "$SRC" > "$RAW"
+
+          # Deterministic dark theme (bg #0d1117, purple accents, light text) —
+          # not subject to metrics' CSS sanitizer. The assert guards against
+          # ever patching an already-themed (stale) file.
           python3 - <<'PY'
-          f = "metrics.svg"
-          s = open(f, encoding="utf-8").read()
-          # Full-size dark background as the first child of the root <svg>.
+          import os
+          s = open(os.environ["RAW"], encoding="utf-8").read()
+          assert 'fill="#0d1117"' not in s, "metrics.svg is already themed — not a fresh render"
           i = s.index(">") + 1
           s = s[:i] + '<rect x="0" y="0" width="100%" height="100%" fill="#0d1117"/>' + s[i:]
-          # Recolor text/headers/footer and empty calendar days for dark bg.
           for a, b in [
               ("color:#777", "color:#c9d1d9"),     # base text
               ("color:#0366d6", "color:#6e48f5"),  # h1/h2/h3 headers
@@ -53,13 +64,22 @@ jobs:
               ('fill="#ebedf0"', 'fill="#161b22"'),# empty calendar cells
           ]:
               s = s.replace(a, b)
-          open(f, "w", encoding="utf-8").write(s)
+          open(os.environ["DEST"], "w", encoding="utf-8").write(s)
           PY
 
-      - name: Commit rendered SVG
-        run: |
+          # Publish the themed SVG (now at $DEST) to the dedicated `metrics`
+          # branch (kept off main so it never pollutes history or the graph).
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin metrics
+          git checkout metrics
+          cp "$DEST" metrics.svg
           git add metrics.svg
-          git commit -m "chore: update metrics" || { echo "no changes"; exit 0; }
+          # Skip cleanly only when nothing actually changed; let a real commit
+          # failure surface instead of being masked as "no changes".
+          if git diff --cached --quiet; then
+            echo "no changes to publish"
+            exit 0
+          fi
+          git commit -m "chore: update metrics"
           git push origin metrics
