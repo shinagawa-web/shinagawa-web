@@ -45,5 +45,5 @@ Engineer focused on the reliability of long-running systems — incident respons
 </div>
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com/?user=shinagawa-web&hide_border=true&background=0d1117&stroke=6E48F5&ring=B14FF5&fire=B14FF5&currStreakNum=ffffff&currStreakLabel=6E48F5&sideNums=c9d1d9&sideLabels=c9d1d9&dates=8b949e" alt="GitHub Streak" />
+  <img src="https://raw.githubusercontent.com/shinagawa-web/shinagawa-web/metrics/streak.svg" alt="GitHub Streak" />
 </div>

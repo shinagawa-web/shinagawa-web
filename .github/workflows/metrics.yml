@@ -71,12 +71,23 @@ jobs:
 
           # Publish the themed SVG (now at $DEST) to the dedicated `metrics`
           # branch (kept off main so it never pollutes history or the graph).
+          curl -sf "https://streak-stats.demolab.com/?user=shinagawa-web&hide_border=true&background=0d1117&stroke=6E48F5&ring=B14FF5&fire=B14FF5&currStreakNum=ffffff&currStreakLabel=6E48F5&sideNums=c9d1d9&sideLabels=c9d1d9&dates=8b949e" \
+            -o /tmp/streak-raw.svg
+          python3 - <<'PY'
+          import re
+          s = open("/tmp/streak-raw.svg", encoding="utf-8").read()
+          s = s.replace("0% { opacity: 0; }", "0% { opacity: 1; }")
+          s = re.sub(r"0% \{ font-size: 3px; opacity: 0\.2; \}", "0% { font-size: 28px; opacity: 1; }", s)
+          open("/tmp/streak.svg", "w", encoding="utf-8").write(s)
+          PY
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin metrics
           git checkout metrics
           cp "$DEST" metrics.svg
-          git add metrics.svg
+          cp /tmp/streak.svg streak.svg
+          git add metrics.svg streak.svg
           # Skip cleanly only when nothing actually changed; let a real commit
           # failure surface instead of being masked as "no changes".
           if git diff --cached --quiet; then
